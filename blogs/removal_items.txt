@@ -1,0 +1,52 @@
+
+in title.html
+<p>
+    <a href="{% url 'blogs:edit_entry' title.id %}">edit entry</a>
+</p> 
+
+
+from edit_entry.html
+<p>
+<a href="{% url 'blogs:title' title.id %}">{{ title }}</a>
+</p>
+
+
+from base.html
+
+<li><a href="{% url 'blogs:titles' %}">Blog Titles</a></li>
+
+
+from index.html
+
+<p>Blogs</p>
+<!-- put new_entry link here -->
+<p>
+    <a href="{% url 'blogs:new_entry' %}">add new entry</a>
+</p>
+
+
+<ul>
+
+        {% for post in posts %}
+        
+            <li>
+                 <!-- put title link here -->
+                <a href="{% url 'blogs:title' title.id %}">{{post.title}}</a>
+                
+            </li>
+    <!-- put edit_entry link here? -->
+             
+        
+    {% empty %}
+        <li>No posts have been added yet.</li>
+    {% endfor %}
+     
+</ul>
+
+
+from titles.html
+<li><a href="{% url 'blogs:title' title.id %}">{{title}}</a></li>
+
+<p>
+<a href="{% url 'blogs:new_entry' %}">add new entry</a>
+</p>

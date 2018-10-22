@@ -1,0 +1,32 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+<p>The Blog lets you log your expressions.</p>
+<p>Blogs</p>
+<ul>
+    {% for title in titles %}
+    <li>Title: {{title }}</li>
+
+
+    <li>Date: {{title.date_added}}</li>
+    <li>Post Id: {{title.id}}</li>
+    <li>Post: {{title.text}}</li>
+    
+    <li><a href="{% url 'blogs:new_entry' %}">add new entry</a></li>
+    
+    <br>
+    {% empty %}
+    <li>No titles have been added yet.</li>
+    {% endfor %}
+    
+    
+
+</ul>
+
+
+
+<!-- put new_entry link here -->
+<!--<p>
+    <a href="{% url 'blogs:new_entry' %}">add new entry</a>
+</p>-->
+{% endblock content %}

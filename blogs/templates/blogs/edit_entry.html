@@ -1,0 +1,17 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+
+<!-- put blogs/title title.id here? -->
+
+<p>Edit entry:</p>
+<!-- need to have form display the post we want to edit -->
+
+<form action="{% url 'blogs:edit_entry' title.id %}" method='post'>
+    {% csrf_token %}
+    {{form.as_p }}
+    <button name="submit">save changes</button>
+</form>
+
+
+ {% endblock content %}

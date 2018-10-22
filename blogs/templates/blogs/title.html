@@ -1,0 +1,25 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+
+<p>Title: {{title }}</p>
+
+
+<p>Date: {{title.date_added}}</p>
+<p>Post Id: {{title.id}}</p>
+<p>Post: {{title.text|linebreaks}}</p>
+
+
+
+<!--put edit_entry link here-->
+ <p>
+    <a href="{% url 'blogs:edit_entry' title.id %}">edit entry</a>
+</p> 
+
+<!-- put new_entry here, for redundancy-->
+<p>
+    <a href="{% url 'blogs:new_entry' %}">add new entry</a>
+</p>
+    
+{% endblock content%}
+

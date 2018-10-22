@@ -12,7 +12,7 @@
     <li>Post Id: {{title.id}}</li>
     <li>Post: {{title.text}}</li>
     
-    <li><a href="{% url 'blogs:new_entry' %}">add new entry</a></li>
+    
     
     <br>
     {% empty %}
@@ -22,11 +22,11 @@
     
 
 </ul>
+<!-- put edit_entry link here -->
 
-
-
+<a href="{% url 'blogs:edit_entry' title.id %}">edit entry</a>
 <!-- put new_entry link here -->
-<!--<p>
+<p>
     <a href="{% url 'blogs:new_entry' %}">add new entry</a>
-</p>-->
+</p>
 {% endblock content %}

@@ -21,6 +21,6 @@ urlpatterns = [
     path('new_entry/', views.new_entry, name='new_entry'),
     
     #page for editing an existing entry
-    #path('edit_entry/<int:title_id', views.edit_entry, name='edit_entry'),
+    path('edit_entry/<int:title_id', views.edit_entry, name='edit_entry'),
     
 ]
